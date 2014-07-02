@@ -21,6 +21,10 @@
 		71A5A8E8196477AC00B40A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A5A8CA196477AC00B40A5C /* UIKit.framework */; };
 		71A5A8F0196477AC00B40A5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71A5A8EE196477AC00B40A5C /* InfoPlist.strings */; };
 		71A5A8F2196477AC00B40A5C /* SimpleStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A8F1196477AC00B40A5C /* SimpleStoreTests.m */; };
+		71A5A8FC19647BFF00B40A5C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A5A8FB19647BFF00B40A5C /* StoreKit.framework */; };
+		71A5A8FF1964884200B40A5C /* SSInAppPurchaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A8FE1964884200B40A5C /* SSInAppPurchaseController.m */; };
+		71A5A90119648A8100B40A5C /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 71A5A90019648A8100B40A5C /* Products.json */; };
+		71A5A90419648E7500B40A5C /* SSStoreDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A90319648E7500B40A5C /* SSStoreDatasource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,12 @@
 		71A5A8ED196477AC00B40A5C /* SimpleStoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimpleStoreTests-Info.plist"; sourceTree = "<group>"; };
 		71A5A8EF196477AC00B40A5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		71A5A8F1196477AC00B40A5C /* SimpleStoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleStoreTests.m; sourceTree = "<group>"; };
+		71A5A8FB19647BFF00B40A5C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		71A5A8FD1964884200B40A5C /* SSInAppPurchaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSInAppPurchaseController.h; sourceTree = "<group>"; };
+		71A5A8FE1964884200B40A5C /* SSInAppPurchaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSInAppPurchaseController.m; sourceTree = "<group>"; };
+		71A5A90019648A8100B40A5C /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		71A5A90219648E7500B40A5C /* SSStoreDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStoreDatasource.h; sourceTree = "<group>"; };
+		71A5A90319648E7500B40A5C /* SSStoreDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStoreDatasource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A5A8FC19647BFF00B40A5C /* StoreKit.framework in Frameworks */,
 				71A5A8C9196477AC00B40A5C /* CoreGraphics.framework in Frameworks */,
 				71A5A8CB196477AC00B40A5C /* UIKit.framework in Frameworks */,
 				71A5A8C7196477AC00B40A5C /* Foundation.framework in Frameworks */,
@@ -101,6 +112,7 @@
 		71A5A8C5196477AC00B40A5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71A5A8FB19647BFF00B40A5C /* StoreKit.framework */,
 				71A5A8C6196477AC00B40A5C /* Foundation.framework */,
 				71A5A8C8196477AC00B40A5C /* CoreGraphics.framework */,
 				71A5A8CA196477AC00B40A5C /* UIKit.framework */,
@@ -117,6 +129,11 @@
 				71A5A8D8196477AC00B40A5C /* Main.storyboard */,
 				71A5A8DB196477AC00B40A5C /* SSViewController.h */,
 				71A5A8DC196477AC00B40A5C /* SSViewController.m */,
+				71A5A90219648E7500B40A5C /* SSStoreDatasource.h */,
+				71A5A90319648E7500B40A5C /* SSStoreDatasource.m */,
+				71A5A8FD1964884200B40A5C /* SSInAppPurchaseController.h */,
+				71A5A8FE1964884200B40A5C /* SSInAppPurchaseController.m */,
+				71A5A90019648A8100B40A5C /* Products.json */,
 				71A5A8DE196477AC00B40A5C /* Images.xcassets */,
 				71A5A8CD196477AC00B40A5C /* Supporting Files */,
 			);
@@ -230,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71A5A8DF196477AC00B40A5C /* Images.xcassets in Resources */,
+				71A5A90119648A8100B40A5C /* Products.json in Resources */,
 				71A5A8D1196477AC00B40A5C /* InfoPlist.strings in Resources */,
 				71A5A8DA196477AC00B40A5C /* Main.storyboard in Resources */,
 			);
@@ -252,7 +270,9 @@
 			files = (
 				71A5A8DD196477AC00B40A5C /* SSViewController.m in Sources */,
 				71A5A8D7196477AC00B40A5C /* SSAppDelegate.m in Sources */,
+				71A5A90419648E7500B40A5C /* SSStoreDatasource.m in Sources */,
 				71A5A8D3196477AC00B40A5C /* main.m in Sources */,
+				71A5A8FF1964884200B40A5C /* SSInAppPurchaseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleStore/SimpleStore-Prefix.pch";
 				INFOPLIST_FILE = "SimpleStore/SimpleStore-Info.plist";
@@ -390,6 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleStore/SimpleStore-Prefix.pch";
 				INFOPLIST_FILE = "SimpleStore/SimpleStore-Info.plist";
@@ -457,6 +479,7 @@
 				71A5A8F7196477AC00B40A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71A5A8F8196477AC00B40A5C /* Build configuration list for PBXNativeTarget "SimpleStoreTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +488,7 @@
 				71A5A8FA196477AC00B40A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
