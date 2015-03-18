@@ -142,6 +142,8 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
     [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseCompletedNotification object:self userInfo:@{@"productId":transaction.originalTransaction.payment.productIdentifier}];
     [self finishTransaction:transaction wasSuccessful:YES];
     
+    // crashes in iOS 8 or higher, as originalTransaction will be nil, need to implement receipt verification
+    
 }
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {
@@ -157,6 +159,8 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseRestoredNotification object:self userInfo:@{@"productId":transaction.originalTransaction.payment.productIdentifier}];
     [self finishTransaction:transaction wasSuccessful:YES];
+    
+    // crashes in iOS 8 or higher, as originalTransaction will be nil, need to implement receipt verification
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
