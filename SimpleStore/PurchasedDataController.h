@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString * const kPurchasedContentUpdated = @"kPurchasedContentUpdated";
+
 @interface PurchasedDataController : NSObject
 
 @property (assign, nonatomic, readonly) NSInteger gold;

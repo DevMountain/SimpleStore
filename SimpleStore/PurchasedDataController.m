@@ -85,19 +85,22 @@ static NSString * const kAdsRemovedKey = @"adsRemoved";
 
 - (void)purchaseNotification:(NSNotification *)notification {
     
-    NSString *productIdentifer = notification.userInfo[@"productID"];
+    NSString *productIdentifer = notification.userInfo[kProductIDKey];
     
-    if ([productIdentifer isEqualToString:@"com.devmtn.SimpleStore.removeAds]"]) {
+    if ([productIdentifer isEqualToString:@"com.devmtn.SimpleStore.removeads"]) {
         self.adsRemoved = YES;
     }
     
-    if ([productIdentifer isEqualToString:@"com.devmtn.SimpleStore.goldStar"]) {
+    if ([productIdentifer isEqualToString:@"com.devmtn.SimpleStore.goldstar"]) {
         self.goldStar = YES;
     }
     
     if ([productIdentifer isEqualToString:@"com.devmtn.SimpleStore.1000gold"]) {
         self.gold = self.gold + 1000;
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kPurchasedContentUpdated object:nil userInfo:nil];
+    
 }
 
 - (void)dealloc {

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PurchasedDataController.h"
+
 @import iAd;
 
 @interface ViewController ()
@@ -24,7 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
     [self configureWithPurchases];
+    [self registerForPurchaseNotifications];
     
 }
 
@@ -47,14 +50,16 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)purchasesUpdated:(NSNotification *)notification {
+    [self configureWithPurchases];
 }
-*/
+
+- (void)registerForPurchaseNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(purchasesUpdated:) name:kPurchasedContentUpdated object:nil];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kPurchasedContentUpdated object:nil];
+}
 
 @end

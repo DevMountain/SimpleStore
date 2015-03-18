@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
 
-static NSString * const kInAppPurchaseFetchedNotification;
-static NSString * const kInAppPurchaseCompletedNotification; // UserInfo @"productId"
-static NSString * const kInAppPurchaseRestoredNotification; // UserInfo @"productId"
+static NSString * const kInAppPurchaseFetchedNotification = @"kInAppPurchaseFetchedNotification";
+static NSString * const kInAppPurchaseCompletedNotification = @"kInAppPurchaseCompletedNotification";
+static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseRestoredNotification";
+
+static NSString * const kProductIDKey = @"productID";
 
 @interface StorePurchaseController : NSObject
 

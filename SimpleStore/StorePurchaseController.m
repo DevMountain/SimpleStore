@@ -8,10 +8,6 @@
 
 #import "StorePurchaseController.h"
 
-static NSString * const kInAppPurchaseFetchedNotification = @"kInAppPurchaseFetchedNotification";
-static NSString * const kInAppPurchaseCompletedNotification = @"kInAppPurchaseCompletedNotification";
-static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCompletedNotification";
-
 @interface StorePurchaseController () <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property (nonatomic, strong) SKProductsRequest *productsRequest;
@@ -139,10 +135,16 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
     
     // notifies app that purchase succeeded and passes the product identifier
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseCompletedNotification object:self userInfo:@{@"productId":transaction.originalTransaction.payment.productIdentifier}];
-    [self finishTransaction:transaction wasSuccessful:YES];
+    NSString *productIdentifier = @"";
+    if (transaction.payment.productIdentifier) {
+        productIdentifier = transaction.payment.productIdentifier;
+    } else if (transaction.originalTransaction.payment.productIdentifier) {
+        productIdentifier = transaction.payment.productIdentifier;
+    }
     
-    // crashes in iOS 8 or higher, as originalTransaction will be nil, need to implement receipt verification
+    [self finishTransaction:transaction wasSuccessful:YES];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseCompletedNotification object:self userInfo:@{kProductIDKey:productIdentifier}];
     
 }
 
@@ -156,11 +158,17 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
     [alertView show];
     
     // notifies app that purchase was restored and passes the product identifier
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseRestoredNotification object:self userInfo:@{@"productId":transaction.originalTransaction.payment.productIdentifier}];
+
+    NSString *productIdentifier = @"";
+    if (transaction.payment.productIdentifier) {
+        productIdentifier = transaction.payment.productIdentifier;
+    } else if (transaction.originalTransaction.payment.productIdentifier) {
+        productIdentifier = transaction.payment.productIdentifier;
+    }
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseRestoredNotification object:self userInfo:@{kProductIDKey:productIdentifier}];
     [self finishTransaction:transaction wasSuccessful:YES];
     
-    // crashes in iOS 8 or higher, as originalTransaction will be nil, need to implement receipt verification
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
