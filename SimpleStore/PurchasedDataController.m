@@ -46,6 +46,18 @@ static NSString * const kAdsRemovedKey = @"adsRemoved";
     self.gold = [[NSUserDefaults standardUserDefaults] integerForKey:kGoldKey];
     self.goldStar = [[NSUserDefaults standardUserDefaults] boolForKey:kGoldStarKey];
     self.adsRemoved = [[NSUserDefaults standardUserDefaults] boolForKey:kAdsRemovedKey];
+    
+    if (!self.gold) {
+        self.gold = 0;
+    }
+    
+    if (!self.goldStar) {
+        self.goldStar = NO;
+    }
+    
+    if (!self.adsRemoved) {
+        self.adsRemoved = NO;
+    }
 }
 
 - (void)setGold:(NSInteger)gold {

@@ -44,7 +44,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldStar" translatesAutoresizingMaskIntoConstraints="NO" id="5GU-ZN-N93">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldStarBuy" translatesAutoresizingMaskIntoConstraints="NO" id="5GU-ZN-N93">
                                 <rect key="frame" x="180" y="134" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="3qi-8s-T9e"/>
@@ -132,6 +132,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GoldStar" width="5000" height="3750"/>
+        <image name="GoldStarBuy" width="5000" height="3750"/>
     </resources>
 </document>

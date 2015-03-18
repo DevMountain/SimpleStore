@@ -42,8 +42,8 @@
         self.bannerView = nil;
     }
     
-    if (![PurchasedDataController sharedInstance].goldStar) {
-        [self.goldStarView removeFromSuperview];
+    if ([PurchasedDataController sharedInstance].goldStar) {
+        self.goldStarView.image = [UIImage imageNamed:@"GoldStar"];
     }
 }
 
