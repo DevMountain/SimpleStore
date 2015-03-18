@@ -1,30 +1,137 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kpi-a9-i5b">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Store-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="SSViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="StoreViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Store" id="wJ9-dU-2XH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2233" y="302"/>
+        </scene>
+        <!--Play-->
+        <scene sceneID="III-3K-bFt">
+            <objects>
+                <viewController id="9XW-FS-LFl" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FkR-u9-fyR"/>
+                        <viewControllerLayoutGuide type="bottom" id="C6M-RP-Zna"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T6h-xp-6Q6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="WHh-E6-Kfa">
+                                <rect key="frame" x="140" y="501" width="320" height="50"/>
+                            </adBannerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gold Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKu-li-qE0">
+                                <rect key="frame" x="247" y="394" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldStar" translatesAutoresizingMaskIntoConstraints="NO" id="5GU-ZN-N93">
+                                <rect key="frame" x="180" y="134" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="3qi-8s-T9e"/>
+                                    <constraint firstAttribute="width" constant="240" id="q6B-p2-QV0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C6M-RP-Zna" firstAttribute="top" secondItem="eKu-li-qE0" secondAttribute="bottom" constant="136" id="4s4-hf-Wtv"/>
+                            <constraint firstItem="C6M-RP-Zna" firstAttribute="top" secondItem="WHh-E6-Kfa" secondAttribute="bottom" id="YU3-Bf-iRn"/>
+                            <constraint firstAttribute="centerX" secondItem="WHh-E6-Kfa" secondAttribute="centerX" id="clk-ML-eqN"/>
+                            <constraint firstAttribute="centerX" secondItem="eKu-li-qE0" secondAttribute="centerX" id="cy3-4x-ld7"/>
+                            <constraint firstItem="5GU-ZN-N93" firstAttribute="top" secondItem="FkR-u9-fyR" secondAttribute="bottom" constant="70" id="eKR-nZ-mQI"/>
+                            <constraint firstItem="5GU-ZN-N93" firstAttribute="centerX" secondItem="WHh-E6-Kfa" secondAttribute="centerX" id="hOc-eC-Yja"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Play" id="BYq-ze-d7A"/>
+                    <connections>
+                        <outlet property="bannerView" destination="WHh-E6-Kfa" id="aMV-8i-abG"/>
+                        <outlet property="goldLabel" destination="eKu-li-qE0" id="Imf-cB-RuI"/>
+                        <outlet property="goldStarView" destination="5GU-ZN-N93" id="22r-gr-wMH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkv-Nn-r3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2233" y="1004"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ryl-rc-dDs">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Kpi-a9-i5b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="46p-Px-ECq">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="P9c-C9-6KZ" kind="relationship" relationship="viewControllers" id="iXY-3z-L2i"/>
+                        <segue destination="CTU-S0-TlD" kind="relationship" relationship="viewControllers" id="qpm-XP-cuZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qKW-LU-0pJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="609" y="302"/>
+        </scene>
+        <!--Store View-->
+        <scene sceneID="hm2-il-e8t">
+            <objects>
+                <navigationController title="Store View" automaticallyAdjustsScrollViewInsets="NO" id="CTU-S0-TlD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Store" id="rwg-bk-aRG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yj7-Bk-Cq5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Fs7-NA-gbd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CY9-xU-PoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1421" y="302"/>
+        </scene>
+        <!--Default View-->
+        <scene sceneID="Vn9-g2-7J2">
+            <objects>
+                <navigationController title="Default View" automaticallyAdjustsScrollViewInsets="NO" id="P9c-C9-6KZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Play" id="hQo-Ve-aUF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bOj-dm-35B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9XW-FS-LFl" kind="relationship" relationship="rootViewController" id="NIk-Nc-lX7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0a-bm-hU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1421" y="1004"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
+    <resources>
+        <image name="GoldStar" width="5000" height="3750"/>
+    </resources>
 </document>

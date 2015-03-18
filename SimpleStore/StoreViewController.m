@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 DevMountain. All rights reserved.
 //
 
-#import "SSViewController.h"
-#import "SSStoreDatasource.h"
-#import "SSInAppPurchaseController.h"
+#import "StoreViewController.h"
+#import "StoreViewDatasource.h"
+#import "StorePurchaseController.h"
 
-@interface SSViewController () <UITableViewDelegate>
+@interface StoreViewController () <UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) SSStoreDatasource *datasource;
+@property (nonatomic, strong) StoreViewDatasource *datasource;
 
 @end
 
-@implementation SSViewController
+@implementation StoreViewController
 
 - (void)viewDidLoad
 {
@@ -26,12 +26,12 @@
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
     [self.view addSubview:self.tableView];
     
-    self.datasource = [SSStoreDatasource new];
+    self.datasource = [StoreViewDatasource new];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self.datasource;
     
-    [[SSInAppPurchaseController sharedInstance] requestProducts];
+    [[StorePurchaseController sharedInstance] requestProducts];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productsRequested:) name:kInAppPurchaseFetchedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:kInAppPurchaseCompletedNotification object:nil];
@@ -59,7 +59,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [[SSInAppPurchaseController sharedInstance] purchaseOptionSelectedObjectIndex:indexPath.row];
+    [[StorePurchaseController sharedInstance] purchaseOptionSelectedObjectIndex:indexPath.row];
     
 }
 

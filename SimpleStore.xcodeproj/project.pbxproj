@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68F925661AB8E4FF00C382A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F925651AB8E4FF00C382A8 /* ViewController.m */; };
+		68F925681AB8E64200C382A8 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F925671AB8E64200C382A8 /* iAd.framework */; };
+		68F9256B1AB8E69300C382A8 /* PurchasedDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F9256A1AB8E69300C382A8 /* PurchasedDataController.m */; };
 		71A5A8C7196477AC00B40A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A5A8C6196477AC00B40A5C /* Foundation.framework */; };
 		71A5A8C9196477AC00B40A5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A5A8C8196477AC00B40A5C /* CoreGraphics.framework */; };
 		71A5A8CB196477AC00B40A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A5A8CA196477AC00B40A5C /* UIKit.framework */; };
 		71A5A8D1196477AC00B40A5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71A5A8CF196477AC00B40A5C /* InfoPlist.strings */; };
 		71A5A8D3196477AC00B40A5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A8D2196477AC00B40A5C /* main.m */; };
-		71A5A8D7196477AC00B40A5C /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A8D6196477AC00B40A5C /* SSAppDelegate.m */; };
+		71A5A8D7196477AC00B40A5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A8D6196477AC00B40A5C /* AppDelegate.m */; };
 		71A5A8DA196477AC00B40A5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71A5A8D8196477AC00B40A5C /* Main.storyboard */; };
-		71A5A8DD196477AC00B40A5C /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A8DC196477AC00B40A5C /* SSViewController.m */; };
+		71A5A8DD196477AC00B40A5C /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A8DC196477AC00B40A5C /* StoreViewController.m */; };
 		71A5A8DF196477AC00B40A5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A5A8DE196477AC00B40A5C /* Images.xcassets */; };
 		71A5A8E6196477AC00B40A5C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A5A8E5196477AC00B40A5C /* XCTest.framework */; };
 		71A5A8E7196477AC00B40A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A5A8C6196477AC00B40A5C /* Foundation.framework */; };
@@ -22,9 +25,9 @@
 		71A5A8F0196477AC00B40A5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71A5A8EE196477AC00B40A5C /* InfoPlist.strings */; };
 		71A5A8F2196477AC00B40A5C /* SimpleStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A8F1196477AC00B40A5C /* SimpleStoreTests.m */; };
 		71A5A8FC19647BFF00B40A5C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A5A8FB19647BFF00B40A5C /* StoreKit.framework */; };
-		71A5A8FF1964884200B40A5C /* SSInAppPurchaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A8FE1964884200B40A5C /* SSInAppPurchaseController.m */; };
+		71A5A8FF1964884200B40A5C /* StorePurchaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A8FE1964884200B40A5C /* StorePurchaseController.m */; };
 		71A5A90119648A8100B40A5C /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 71A5A90019648A8100B40A5C /* Products.json */; };
-		71A5A90419648E7500B40A5C /* SSStoreDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A90319648E7500B40A5C /* SSStoreDatasource.m */; };
+		71A5A90419648E7500B40A5C /* StoreViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A5A90319648E7500B40A5C /* StoreViewDatasource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68F925641AB8E4FF00C382A8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		68F925651AB8E4FF00C382A8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		68F925671AB8E64200C382A8 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		68F925691AB8E69300C382A8 /* PurchasedDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchasedDataController.h; sourceTree = "<group>"; };
+		68F9256A1AB8E69300C382A8 /* PurchasedDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchasedDataController.m; sourceTree = "<group>"; };
 		71A5A8C3196477AC00B40A5C /* SimpleStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A5A8C6196477AC00B40A5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71A5A8C8196477AC00B40A5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,11 +54,11 @@
 		71A5A8D0196477AC00B40A5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		71A5A8D2196477AC00B40A5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71A5A8D4196477AC00B40A5C /* SimpleStore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleStore-Prefix.pch"; sourceTree = "<group>"; };
-		71A5A8D5196477AC00B40A5C /* SSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
-		71A5A8D6196477AC00B40A5C /* SSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAppDelegate.m; sourceTree = "<group>"; };
+		71A5A8D5196477AC00B40A5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		71A5A8D6196477AC00B40A5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		71A5A8D9196477AC00B40A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		71A5A8DB196477AC00B40A5C /* SSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSViewController.h; sourceTree = "<group>"; };
-		71A5A8DC196477AC00B40A5C /* SSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSViewController.m; sourceTree = "<group>"; };
+		71A5A8DB196477AC00B40A5C /* StoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		71A5A8DC196477AC00B40A5C /* StoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		71A5A8DE196477AC00B40A5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		71A5A8E4196477AC00B40A5C /* SimpleStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A5A8E5196477AC00B40A5C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -58,11 +66,11 @@
 		71A5A8EF196477AC00B40A5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		71A5A8F1196477AC00B40A5C /* SimpleStoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleStoreTests.m; sourceTree = "<group>"; };
 		71A5A8FB19647BFF00B40A5C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		71A5A8FD1964884200B40A5C /* SSInAppPurchaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSInAppPurchaseController.h; sourceTree = "<group>"; };
-		71A5A8FE1964884200B40A5C /* SSInAppPurchaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSInAppPurchaseController.m; sourceTree = "<group>"; };
+		71A5A8FD1964884200B40A5C /* StorePurchaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorePurchaseController.h; sourceTree = "<group>"; };
+		71A5A8FE1964884200B40A5C /* StorePurchaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorePurchaseController.m; sourceTree = "<group>"; };
 		71A5A90019648A8100B40A5C /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
-		71A5A90219648E7500B40A5C /* SSStoreDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStoreDatasource.h; sourceTree = "<group>"; };
-		71A5A90319648E7500B40A5C /* SSStoreDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStoreDatasource.m; sourceTree = "<group>"; };
+		71A5A90219648E7500B40A5C /* StoreViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewDatasource.h; sourceTree = "<group>"; };
+		71A5A90319648E7500B40A5C /* StoreViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewDatasource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F925681AB8E64200C382A8 /* iAd.framework in Frameworks */,
 				71A5A8FC19647BFF00B40A5C /* StoreKit.framework in Frameworks */,
 				71A5A8C9196477AC00B40A5C /* CoreGraphics.framework in Frameworks */,
 				71A5A8CB196477AC00B40A5C /* UIKit.framework in Frameworks */,
@@ -112,6 +121,7 @@
 		71A5A8C5196477AC00B40A5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68F925671AB8E64200C382A8 /* iAd.framework */,
 				71A5A8FB19647BFF00B40A5C /* StoreKit.framework */,
 				71A5A8C6196477AC00B40A5C /* Foundation.framework */,
 				71A5A8C8196477AC00B40A5C /* CoreGraphics.framework */,
@@ -124,15 +134,19 @@
 		71A5A8CC196477AC00B40A5C /* SimpleStore */ = {
 			isa = PBXGroup;
 			children = (
-				71A5A8D5196477AC00B40A5C /* SSAppDelegate.h */,
-				71A5A8D6196477AC00B40A5C /* SSAppDelegate.m */,
 				71A5A8D8196477AC00B40A5C /* Main.storyboard */,
-				71A5A8DB196477AC00B40A5C /* SSViewController.h */,
-				71A5A8DC196477AC00B40A5C /* SSViewController.m */,
-				71A5A90219648E7500B40A5C /* SSStoreDatasource.h */,
-				71A5A90319648E7500B40A5C /* SSStoreDatasource.m */,
-				71A5A8FD1964884200B40A5C /* SSInAppPurchaseController.h */,
-				71A5A8FE1964884200B40A5C /* SSInAppPurchaseController.m */,
+				71A5A8D5196477AC00B40A5C /* AppDelegate.h */,
+				71A5A8D6196477AC00B40A5C /* AppDelegate.m */,
+				68F925641AB8E4FF00C382A8 /* ViewController.h */,
+				68F925651AB8E4FF00C382A8 /* ViewController.m */,
+				71A5A8DB196477AC00B40A5C /* StoreViewController.h */,
+				71A5A8DC196477AC00B40A5C /* StoreViewController.m */,
+				71A5A90219648E7500B40A5C /* StoreViewDatasource.h */,
+				71A5A90319648E7500B40A5C /* StoreViewDatasource.m */,
+				71A5A8FD1964884200B40A5C /* StorePurchaseController.h */,
+				71A5A8FE1964884200B40A5C /* StorePurchaseController.m */,
+				68F925691AB8E69300C382A8 /* PurchasedDataController.h */,
+				68F9256A1AB8E69300C382A8 /* PurchasedDataController.m */,
 				71A5A90019648A8100B40A5C /* Products.json */,
 				71A5A8DE196477AC00B40A5C /* Images.xcassets */,
 				71A5A8CD196477AC00B40A5C /* Supporting Files */,
@@ -217,6 +231,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = DevMountain;
 				TargetAttributes = {
+					71A5A8C2196477AC00B40A5C = {
+						DevelopmentTeam = 357NQPN89X;
+					};
 					71A5A8E3196477AC00B40A5C = {
 						TestTargetID = 71A5A8C2196477AC00B40A5C;
 					};
@@ -268,11 +285,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71A5A8DD196477AC00B40A5C /* SSViewController.m in Sources */,
-				71A5A8D7196477AC00B40A5C /* SSAppDelegate.m in Sources */,
-				71A5A90419648E7500B40A5C /* SSStoreDatasource.m in Sources */,
+				68F925661AB8E4FF00C382A8 /* ViewController.m in Sources */,
+				71A5A8DD196477AC00B40A5C /* StoreViewController.m in Sources */,
+				71A5A8D7196477AC00B40A5C /* AppDelegate.m in Sources */,
+				71A5A90419648E7500B40A5C /* StoreViewDatasource.m in Sources */,
 				71A5A8D3196477AC00B40A5C /* main.m in Sources */,
-				71A5A8FF1964884200B40A5C /* SSInAppPurchaseController.m in Sources */,
+				68F9256B1AB8E69300C382A8 /* PurchasedDataController.m in Sources */,
+				71A5A8FF1964884200B40A5C /* StorePurchaseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,10 +417,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleStore/SimpleStore-Prefix.pch";
 				INFOPLIST_FILE = "SimpleStore/SimpleStore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -411,11 +433,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimpleStore/SimpleStore-Prefix.pch";
 				INFOPLIST_FILE = "SimpleStore/SimpleStore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

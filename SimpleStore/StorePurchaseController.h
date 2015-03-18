@@ -7,19 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <StoreKit/StoreKit.h>
 
 static NSString * const kInAppPurchaseFetchedNotification;
 static NSString * const kInAppPurchaseCompletedNotification; // UserInfo @"productId"
 static NSString * const kInAppPurchaseRestoredNotification; // UserInfo @"productId"
 
-@interface SSInAppPurchaseController : NSObject
+@interface StorePurchaseController : NSObject
 
 @property (nonatomic, strong) NSArray *products;
 
-+ (SSInAppPurchaseController *)sharedInstance;
++ (StorePurchaseController *)sharedInstance;
 
 - (void)requestProducts;
 - (void)restorePurchases;
 - (void)purchaseOptionSelectedObjectIndex:(NSUInteger)index;
+
+- (NSSet *)bundledProducts;
 
 @end

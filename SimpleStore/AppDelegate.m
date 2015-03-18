@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 DevMountain. All rights reserved.
 //
 
-#import "SSAppDelegate.h"
+#import "AppDelegate.h"
+#import "PurchasedDataController.h"
 
-@implementation SSAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

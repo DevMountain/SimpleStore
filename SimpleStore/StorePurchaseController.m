@@ -6,27 +6,26 @@
 //  Copyright (c) 2014 DevMountain. All rights reserved.
 //
 
-#import "SSInAppPurchaseController.h"
-#import <StoreKit/StoreKit.h>
+#import "StorePurchaseController.h"
 
 static NSString * const kInAppPurchaseFetchedNotification = @"kInAppPurchaseFetchedNotification";
 static NSString * const kInAppPurchaseCompletedNotification = @"kInAppPurchaseCompletedNotification";
 static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCompletedNotification";
 
-@interface SSInAppPurchaseController () <SKProductsRequestDelegate, SKPaymentTransactionObserver>
+@interface StorePurchaseController () <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 
 @property (nonatomic, strong) SKProductsRequest *productsRequest;
 @property (nonatomic, assign) BOOL productsRequested;
 
 @end
 
-@implementation SSInAppPurchaseController
+@implementation StorePurchaseController
 
-+ (SSInAppPurchaseController *)sharedInstance {
-    static SSInAppPurchaseController *sharedInstance = nil;
++ (StorePurchaseController *)sharedInstance {
+    static StorePurchaseController *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[SSInAppPurchaseController alloc] init];
+        sharedInstance = [[StorePurchaseController alloc] init];
         [sharedInstance loadStore];
     });
     return sharedInstance;
@@ -86,7 +85,6 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
                                   otherButtonTitles:nil];
         [alertView show];
 	}
-
 }
 
 
@@ -171,6 +169,9 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
             case SKPaymentTransactionStateRestored:
                 [self restoreTransaction:transaction];
 				NSLog(@"payment restored");
+                break;
+            case SKPaymentTransactionStateDeferred:
+                NSLog(@"payment deferred");
                 break;
         }
     }
