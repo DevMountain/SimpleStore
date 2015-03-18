@@ -31,24 +31,9 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
     return sharedInstance;
 }
 
-
-- (void)requestProducts {
-    if (!self.productsRequest) {
-        self.productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[self bundledProducts]];
-        self.productsRequest.delegate = self;
-    }
-
-    if (!self.productsRequested) {
-        [self.productsRequest start];
-        self.productsRequested = YES;
-    }
-}
-
-- (void) restorePurchases {
-    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
-}
-
 - (NSSet *)bundledProducts {
+    
+    // gets all product IDs from the Products.json file
     
     NSBundle *bundle = [NSBundle mainBundle];
     NSArray *bundleProducts = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:[bundle URLForResource:@"Products" withExtension:@"json"]] options:0 error:nil];
@@ -59,12 +44,41 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
     return nil;
 }
 
+
+- (void)requestProducts {
+    if (!self.productsRequest) {
+        
+        // grabs product IDs
+        
+        self.productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[self bundledProducts]];
+        self.productsRequest.delegate = self;
+    }
+
+    if (!self.productsRequested) {
+        
+        // requests products from iTunes Connect
+        
+        [self.productsRequest start];
+        self.productsRequested = YES;
+    }
+}
+
+- (void) restorePurchases {
+    
+    // restores purchases for the user
+    
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
+
 #pragma mark - Actions
 
 - (void)purchaseOptionSelectedObjectIndex:(NSUInteger)index {
 
     if ([SKPaymentQueue canMakePayments]) {
         if ([self.products count] > 0) {
+            
+            // create payment with the selected product
+            
             SKPayment *payment = [SKPayment paymentWithProduct:self.products[index]];
             [[SKPaymentQueue defaultQueue] addPayment:payment];
         } else {
@@ -104,6 +118,8 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
         NSLog(@"Invalid product id: %@" , invalidProductId);
     }
     
+    // notifies app that products were loaded
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseFetchedNotification object:self userInfo:nil];
 }
 
@@ -121,6 +137,8 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
 
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
     
+    // notifies app that purchase succeeded and passes the product identifier
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseCompletedNotification object:self userInfo:@{@"productId":transaction.originalTransaction.payment.productIdentifier}];
     [self finishTransaction:transaction wasSuccessful:YES];
     
@@ -135,11 +153,16 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
                               otherButtonTitles:nil];
     [alertView show];
     
+    // notifies app that purchase was restored and passes the product identifier
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kInAppPurchaseRestoredNotification object:self userInfo:@{@"productId":transaction.originalTransaction.payment.productIdentifier}];
     [self finishTransaction:transaction wasSuccessful:YES];
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
+    
+    // closes a failed transaction and logs the error
+    
     if (transaction.error.code != SKErrorPaymentCancelled) {
 		NSLog(@"Error: %@", [transaction error]);
         // error!
@@ -152,6 +175,8 @@ static NSString * const kInAppPurchaseRestoredNotification = @"kInAppPurchaseCom
 
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
 	NSLog(@"Payment Queue method called");
+    
+    // processes the transactions as they work through the queue
 	
     for (SKPaymentTransaction *transaction in transactions) {
         switch (transaction.transactionState) {
